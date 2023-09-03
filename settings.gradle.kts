@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "ExampleIosKmm"
 
 include(":androidApp")
 include(":shared")

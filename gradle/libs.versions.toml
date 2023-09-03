@@ -1,0 +1,18 @@
+[versions]
+ktor = "2.3.4"
+kotlin = "1.9.0"
+mokomvvm="0.16.1"
+
+[libraries]
+kamel = { group = "media.kamel", name = "kamel-image", version = "0.7.2" }
+ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
+ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.6.0" }
+mokomvvm-core= { group = "dev.icerock.moko", name = "mvvm-core", version.ref = "mokomvvm" }
+mokomvvm-compose={ group = "dev.icerock.moko", name = "mvvm-compose", version.ref = "mokomvvm" }
+
+[plugins]
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -26,6 +27,13 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation(libs.kamel)
+                implementation(libs.ktor.core)
+                implementation(libs.kotlin.serialization)
+                implementation(libs.ktor.content.negotiation)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.mokomvvm.core)
+                implementation(libs.mokomvvm.compose)
             }
         }
         val androidMain by getting {
@@ -33,6 +41,7 @@ kotlin {
                 api("androidx.activity:activity-compose:1.7.2")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.10.1")
+                implementation(libs.ktor.android)
             }
         }
         val iosX64Main by getting
@@ -43,6 +52,10 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation(libs.ktor.darwin)
+            }
         }
     }
 }
